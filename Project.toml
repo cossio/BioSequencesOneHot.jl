@@ -1,0 +1,7 @@
+name = "BioSequencesOneHot"
+uuid = "2814ae69-ac9a-473b-90f0-2183b26fd128"
+authors = ["JFdCD <jfdecd@icloud.com>"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.9"
