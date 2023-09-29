@@ -1,6 +1,1 @@
-using BioSequencesOneHot
-using Test
-
-@testset "BioSequencesOneHot.jl" begin
-    # Write your tests here.
-end
+module aqua_tests include("aqua.jl") end
