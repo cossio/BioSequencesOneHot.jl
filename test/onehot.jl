@@ -16,6 +16,10 @@ using BioSequences: @dna_str, @rna_str, @aa_str, LongAA, LongRNA, LongDNA
 
     @test dnaseq(BitMatrix(I(5))) == alphabet(LongDNA)
     @test dnaseq(BitMatrix(I(4))) == alphabet(LongDNA; gap=false)
+
+    @test aaseq(BitArray(stack([I(21), I(21)]))) == [alphabet(LongAA), alphabet(LongAA)]
+    @test rnaseq(BitArray(stack([I(5), I(5)]))) == [alphabet(LongRNA), alphabet(LongRNA)]
+    @test dnaseq(BitArray(stack([I(5), I(5)]))) == [alphabet(LongDNA), alphabet(LongDNA)]
 end
 
 @testset "potts" begin

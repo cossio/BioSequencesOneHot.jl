@@ -7,7 +7,7 @@ function potts(X::BitMatrix)
 end
 
 function potts(X::BitArray{3})
-    return reshape(Int8.(first.(Tuple.(argmax(X; dims=1))), size(X,2), size(X,3)))
+    return reshape(Int8.(first.(Tuple.(argmax(X; dims=1)))), size(X,2), size(X,3))
 end
 
 function potts(s::Union{LongAA, LongAA, LongRNA{4}, LongDNA{4}, AbstractVector{<:LongAA}, AbstractVector{<:LongRNA}, AbstractVector{<:LongDNA}})
