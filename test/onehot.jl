@@ -7,6 +7,15 @@ using BioSequences: @dna_str, @rna_str, @aa_str, LongAA, LongRNA, LongDNA
     @test onehot(alphabet(LongAA)) == I
     @test onehot(alphabet(LongDNA)) == I
     @test onehot(alphabet(LongRNA)) == I
+
+    @test aaseq(BitMatrix(I(21))) == alphabet(LongAA)
+    @test aaseq(BitMatrix(I(20))) == alphabet(LongAA; gap=false)
+
+    @test rnaseq(BitMatrix(I(5))) == alphabet(LongRNA)
+    @test rnaseq(BitMatrix(I(4))) == alphabet(LongRNA; gap=false)
+
+    @test dnaseq(BitMatrix(I(5))) == alphabet(LongDNA)
+    @test dnaseq(BitMatrix(I(4))) == alphabet(LongDNA; gap=false)
 end
 
 @testset "potts" begin
@@ -19,8 +28,11 @@ end
     @test potts(alphabet(LongRNA; gap=false)) == 1:4
 
     @test aaseq(Int8.(1:20)) == alphabet(LongAA; gap=false)
-    @test aaseq(Int8.(1:21)) == alphabet(LongAA; gap=true)
+    @test aaseq(Int8.(1:21)) == alphabet(LongAA)
 
     @test rnaseq(Int8.(1:4)) == alphabet(LongRNA; gap=false)
-    @test rnaseq(Int8.(1:5)) == alphabet(LongRNA; gap=true)
+    @test rnaseq(Int8.(1:5)) == alphabet(LongRNA)
+
+    @test dnaseq(Int8.(1:4)) == alphabet(LongDNA; gap=false)
+    @test dnaseq(Int8.(1:5)) == alphabet(LongDNA)
 end
