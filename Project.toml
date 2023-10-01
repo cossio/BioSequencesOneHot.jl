@@ -1,7 +1,7 @@
 name = "BioSequencesOneHot"
 uuid = "2814ae69-ac9a-473b-90f0-2183b26fd128"
 authors = ["JFdCD <jfdecd@icloud.com>"]
-version = "2.0.1"
+version = "2.0.2-DEV"
 
 [deps]
 BioSequences = "7e6ae17a-c86d-528c-b3b9-7f778a29fe59"
